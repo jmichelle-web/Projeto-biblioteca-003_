@@ -1,47 +1,55 @@
-// firebase.js
+// ========================================
+// CONFIGURAÇÃO DO FIREBASE
+// ========================================
 
-import { initializeApp } from "https://www.gstatic.com/firebasejs/12.17.0/firebase-app.js";
+import { initializeApp }
+    from "https://www.gstatic.com/firebasejs/12.11.0/firebase-app.js";
 
 import {
     getFirestore
-} from "https://www.gstatic.com/firebasejs/12.17.0/firebase-firestore.js";
+} from "https://www.gstatic.com/firebasejs/12.11.0/firebase-firestore.js";
 
 
-// ==========================================
-// CONFIGURAÇÃO DO SEU FIREBASE
-// ==========================================
+// ========================================
+// DADOS DO SEU PROJETO FIREBASE
+// ========================================
 
 const firebaseConfig = {
 
-    apiKey: "COLE_SUA_API_KEY_AQUI",
-
-    authDomain: "SEU-PROJETO.firebaseapp.com",
-
-    projectId: "SEU-PROJETO",
-
-    storageBucket: "SEU-PROJETO.firebasestorage.app",
-
-    messagingSenderId: "SEU_MESSAGING_SENDER_ID",
-
-    appId: "SEU_APP_ID"
+    apiKey: "AIzaSyBzuByF7V5-t5mBAzURE5UhwpALAYTIkjw",
+  authDomain: "bibliotecsa.firebaseapp.com",
+  databaseURL: "https://bibliotecsa-default-rtdb.firebaseio.com",
+  projectId: "bibliotecsa",
+  storageBucket: "bibliotecsa.firebasestorage.app",
+  messagingSenderId: "4923849267",
+  appId: "1:4923849267:web:a79a74977b8cfbfc420146",
+  measurementId: "G-K0FFKFFEVY"
 
 };
 
 
-// ==========================================
-// INICIALIZAÇÃO
-// ==========================================
+// ========================================
+// INICIALIZAR FIREBASE
+// ========================================
 
-const app = initializeApp(firebaseConfig);
+const app =
+    initializeApp(
+        firebaseConfig
+    );
 
 
-// ==========================================
+// ========================================
 // FIRESTORE
-// ==========================================
+// ========================================
 
-const db = getFirestore(app);
+const db =
+    getFirestore(app);
 
 
-// Exporta para o script.js
+// ========================================
+// EXPORTAR BANCO DE DADOS
+// ========================================
 
-export { db };
+export {
+    db
+};
