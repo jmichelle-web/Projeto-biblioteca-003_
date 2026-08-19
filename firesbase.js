@@ -1,55 +1,49 @@
-// ========================================
+// ==========================================
 // CONFIGURAÇÃO DO FIREBASE
-// ========================================
+// ==========================================
 
-import { initializeApp }
-    from "https://www.gstatic.com/firebasejs/12.11.0/firebase-app.js";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
 
 import {
-    getFirestore
-} from "https://www.gstatic.com/firebasejs/12.11.0/firebase-firestore.js";
+    getFirestore,
+    collection,
+    addDoc,
+    getDocs,
+    deleteDoc,
+    doc,
+    updateDoc
+} from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
 
 
-// ========================================
-// DADOS DO SEU PROJETO FIREBASE
-// ========================================
+// ==========================================
+// CONFIGURAÇÃO DO SEU PROJETO FIREBASE
+// ==========================================
 
 const firebaseConfig = {
-
-    apiKey: "AIzaSyBzuByF7V5-t5mBAzURE5UhwpALAYTIkjw",
-  authDomain: "bibliotecsa.firebaseapp.com",
-  databaseURL: "https://bibliotecsa-default-rtdb.firebaseio.com",
-  projectId: "bibliotecsa",
-  storageBucket: "bibliotecsa.firebasestorage.app",
-  messagingSenderId: "4923849267",
-  appId: "1:4923849267:web:a79a74977b8cfbfc420146",
-  measurementId: "G-K0FFKFFEVY"
-
+    apiKey: "SUA_API_KEY",
+    authDomain: "SEU_PROJETO.firebaseapp.com",
+    projectId: "SEU_PROJECT_ID",
+    storageBucket: "SEU_PROJETO.firebasestorage.app",
+    messagingSenderId: "SEU_MESSAGING_SENDER_ID",
+    appId: "SEU_APP_ID"
 };
 
 
-// ========================================
-// INICIALIZAR FIREBASE
-// ========================================
+// ==========================================
+// INICIALIZAÇÃO
+// ==========================================
 
-const app =
-    initializeApp(
-        firebaseConfig
-    );
+const app = initializeApp(firebaseConfig);
 
+const db = getFirestore(app);
 
-// ========================================
-// FIRESTORE
-// ========================================
-
-const db =
-    getFirestore(app);
+console.log("Firebase conectado com sucesso!");
 
 
-// ========================================
-// EXPORTAR BANCO DE DADOS
-// ========================================
+// ==========================================
+// REFERÊNCIAS DAS COLEÇÕES
+// ==========================================
 
-export {
-    db
-};
+const alunosRef = collection(db, "alunos");
+const livrosRef = collection(db, "livros");
+const emprestimosRef = collection(db, "emprestimos");
